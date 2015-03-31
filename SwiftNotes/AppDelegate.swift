@@ -10,7 +10,7 @@ import UIKit
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
 
     var window: UIWindow?
 
@@ -43,9 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //MARK : Setup SSASideMenu
         
-        let rootView = 
         
-        let sideMenu = SSASideMenu(contentViewController: UINavigationController(rootViewController: ), leftMenuViewController: LeftMenuViewController(), rightMenuViewController: RightMenuViewController())
+        
+        
+        let sideMenu = SSASideMenu(contentViewController: UINavigationController(rootViewController: FirstViewController()), leftMenuViewController: LeftMenuViewController(), rightMenuViewController: RightMenuViewController())
         sideMenu.backgroundImage = UIImage(named: "Background.jpg")
         sideMenu.menuPreferredStatusBarStyle = .LightContent
         sideMenu.delegate = self
