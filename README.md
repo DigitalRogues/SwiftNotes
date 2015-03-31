@@ -7,3 +7,4 @@ a collab from [DigitalRogues](https://bitbucket.org/digitalrogues "DigitalRogues
 * quick workflow to add notes.
 * Encrypted on device and in the cloud
 * backed by dropbox so you can export your data how you want.
+* Why? because we want to.
