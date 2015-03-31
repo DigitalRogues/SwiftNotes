@@ -13,6 +13,14 @@
 		BC0EB64F1ACA30530031E0DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0EB64E1ACA30530031E0DB /* Images.xcassets */; };
 		BC0EB6521ACA30530031E0DB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0EB6501ACA30530031E0DB /* LaunchScreen.xib */; };
 		BC0EB65E1ACA30530031E0DB /* SwiftNotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0EB65D1ACA30530031E0DB /* SwiftNotesTests.swift */; };
+		BC0EB6681ACA3D910031E0DB /* Dropbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0EB6671ACA3D910031E0DB /* Dropbox.framework */; };
+		BC0EB66F1ACA3DE30031E0DB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0EB6691ACA3DE30031E0DB /* CFNetwork.framework */; };
+		BC0EB6701ACA3DE30031E0DB /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0EB66A1ACA3DE30031E0DB /* libc++.dylib */; };
+		BC0EB6711ACA3DE30031E0DB /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0EB66B1ACA3DE30031E0DB /* libz.dylib */; };
+		BC0EB6721ACA3DE30031E0DB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0EB66C1ACA3DE30031E0DB /* QuartzCore.framework */; };
+		BC0EB6731ACA3DE30031E0DB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0EB66D1ACA3DE30031E0DB /* Security.framework */; };
+		BC0EB6741ACA3DE30031E0DB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0EB66E1ACA3DE30031E0DB /* SystemConfiguration.framework */; };
+		BC6325421ACA526600C63E8D /* SSASideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6325411ACA526600C63E8D /* SSASideMenu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,15 @@
 		BC0EB6571ACA30530031E0DB /* SwiftNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0EB65C1ACA30530031E0DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0EB65D1ACA30530031E0DB /* SwiftNotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNotesTests.swift; sourceTree = "<group>"; };
+		BC0EB6671ACA3D910031E0DB /* Dropbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Dropbox.framework; sourceTree = "<group>"; };
+		BC0EB6691ACA3DE30031E0DB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BC0EB66A1ACA3DE30031E0DB /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		BC0EB66B1ACA3DE30031E0DB /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		BC0EB66C1ACA3DE30031E0DB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BC0EB66D1ACA3DE30031E0DB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BC0EB66E1ACA3DE30031E0DB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BC0EB6761ACA4BA30031E0DB /* SwiftNotes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftNotes-Bridging-Header.h"; sourceTree = "<group>"; };
+		BC6325411ACA526600C63E8D /* SSASideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSASideMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +60,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0EB66F1ACA3DE30031E0DB /* CFNetwork.framework in Frameworks */,
+				BC0EB6701ACA3DE30031E0DB /* libc++.dylib in Frameworks */,
+				BC0EB6711ACA3DE30031E0DB /* libz.dylib in Frameworks */,
+				BC0EB6721ACA3DE30031E0DB /* QuartzCore.framework in Frameworks */,
+				BC0EB6731ACA3DE30031E0DB /* Security.framework in Frameworks */,
+				BC0EB6741ACA3DE30031E0DB /* SystemConfiguration.framework in Frameworks */,
+				BC0EB6681ACA3D910031E0DB /* Dropbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +114,15 @@
 		BC0EB6451ACA30530031E0DB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BC6325411ACA526600C63E8D /* SSASideMenu.swift */,
+				BC0EB6761ACA4BA30031E0DB /* SwiftNotes-Bridging-Header.h */,
+				BC0EB6691ACA3DE30031E0DB /* CFNetwork.framework */,
+				BC0EB66A1ACA3DE30031E0DB /* libc++.dylib */,
+				BC0EB66B1ACA3DE30031E0DB /* libz.dylib */,
+				BC0EB66C1ACA3DE30031E0DB /* QuartzCore.framework */,
+				BC0EB66D1ACA3DE30031E0DB /* Security.framework */,
+				BC0EB66E1ACA3DE30031E0DB /* SystemConfiguration.framework */,
+				BC0EB6671ACA3D910031E0DB /* Dropbox.framework */,
 				BC0EB6461ACA30530031E0DB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -122,6 +155,7 @@
 				BC0EB63E1ACA30530031E0DB /* Sources */,
 				BC0EB63F1ACA30530031E0DB /* Frameworks */,
 				BC0EB6401ACA30530031E0DB /* Resources */,
+				BC0EB6791ACA4D8A0031E0DB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -207,11 +241,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BC0EB6791ACA4D8A0031E0DB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildPlist=${INFOPLIST_FILE}\nbuildVersion=$(/usr/libexec/PlistBuddy -c \"Print CFBuildVersion\" \"$buildPlist\")\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBuildNumber\" \"$buildPlist\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBuildNumber $buildNumber\" \"$buildPlist\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$buildPlist\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $buildVersion\" \"$buildPlist\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BC0EB63E1ACA30530031E0DB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6325421ACA526600C63E8D /* SSASideMenu.swift in Sources */,
 				BC0EB64A1ACA30530031E0DB /* ViewController.swift in Sources */,
 				BC0EB6481ACA30530031E0DB /* AppDelegate.swift in Sources */,
 			);
@@ -342,9 +393,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftNotes",
+				);
 				INFOPLIST_FILE = SwiftNotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNotes/SwiftNotes-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -352,9 +410,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SwiftNotes",
+				);
 				INFOPLIST_FILE = SwiftNotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftNotes/SwiftNotes-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -411,6 +475,7 @@
 				BC0EB6631ACA30530031E0DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC0EB6641ACA30530031E0DB /* Build configuration list for PBXNativeTarget "SwiftNotesTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +484,7 @@
 				BC0EB6661ACA30530031E0DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

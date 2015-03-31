@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +17,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //init account manager
+        let accountManager = DBAccountManager(appKey: "p4otevrsn0z991s", secret: "ld7wucz9j9o44al")
+        DBAccountManager.setSharedManager(accountManager)
+        
+        //set up datastores
+        //if the account is linked to a user drop box then use that account, else use local store
+        let account = DBAccountManager.sharedManager().linkedAccount
+        if((account) != nil)
+        {
+            //use dropbox store
+            DBDatastoreManager.setSharedManager(DBDatastoreManager(forAccount: account))
+        }
+        
+        else {
+            //use local store
+            DBDatastoreManager.setSharedManager(DBDatastoreManager.localManagerForAccountManager(DBAccountManager.sharedManager()))
+        }
+        
+        
+        
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        //MARK : Setup SSASideMenu
+        
+        let rootView = 
+        
+        let sideMenu = SSASideMenu(contentViewController: UINavigationController(rootViewController: ), leftMenuViewController: LeftMenuViewController(), rightMenuViewController: RightMenuViewController())
+        sideMenu.backgroundImage = UIImage(named: "Background.jpg")
+        sideMenu.menuPreferredStatusBarStyle = .LightContent
+        sideMenu.delegate = self
+        
+        window?.rootViewController = sideMenu
+        window?.makeKeyAndVisible()
+
+        
+        
+        
         return true
     }
 
