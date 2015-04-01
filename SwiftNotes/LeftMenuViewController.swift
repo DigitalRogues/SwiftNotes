@@ -9,7 +9,11 @@
 import Foundation
 import UIKit
 
+////I think we'll have to use the app delegate as a central point so the viewcontrollers arent reinited each time they are called. its a bad thing to do but I dont know of a better way
+//         let view = appDelegate.rootView
 class LeftMenuViewController: UIViewController {
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -28,13 +32,12 @@ class LeftMenuViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.addSubview(tableView)
+                view.addSubview(tableView)
         
     }
     
@@ -64,13 +67,13 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
    
-        let titles: [String] = ["Home", "Calendar", "Profile", "Settings", "Log Out"]
+        let titles: [String] = ["Notes List", "Add Note", "Profile", "Settings", "Log Out"]
         
         let images: [String] = ["IconHome", "IconCalendar", "IconProfile", "IconSettings", "IconEmpty"]
         
         cell.backgroundColor = UIColor.clearColor()
         cell.textLabel?.font = UIFont(name: "HelveticaNeue", size: 21)
-        cell.textLabel?.textColor = UIColor.whiteColor()
+        cell.textLabel?.textColor = UIColor.blackColor()
         cell.textLabel?.text  = titles[indexPath.row]
         cell.selectionStyle = .None
         cell.imageView?.image = UIImage(named: images[indexPath.row])
@@ -82,18 +85,24 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
      
         switch indexPath.row {
         case 0:
             
-            sideMenuViewController?.contentViewController = UINavigationController(rootViewController: FirstViewController())
-            sideMenuViewController?.hideMenuViewController()
+            //Notes
+            let sb:UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let view = sb.instantiateViewControllerWithIdentifier("noteListView") as! UIViewController
+           sideMenuViewController?.contentViewController = view
+                sideMenuViewController?.hideMenuViewController()
             break
         case 1:
             
-            sideMenuViewController?.contentViewController = UINavigationController(rootViewController: SecondViewController())
+            let view = appDelegate.rootView as UIViewController
+            sideMenuViewController?.contentViewController = view
             sideMenuViewController?.hideMenuViewController()
             break
+            
         default:
             break
         }

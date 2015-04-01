@@ -15,9 +15,9 @@ class SecondViewController: UIViewController {
         
         view.backgroundColor = UIColor.whiteColor()
       
-        title = "Calender"
+        title = "Note Entry"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Left", style: .Plain, target: self, action: "presentLeftMenuViewController")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right", style: .Plain, target: self, action: "presentRightMenuViewController")
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right", style: .Plain, target: self, action: "presentRightMenuViewController")
         
     }
     
