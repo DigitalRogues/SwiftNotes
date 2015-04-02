@@ -48,19 +48,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         
          noteInputView = sb.instantiateViewControllerWithIdentifier("contentViewController") as! UIViewController
         let leftMenu = sb.instantiateViewControllerWithIdentifier("leftMenu") as? UIViewController
-
-//        let navi = UINavigationController(rootViewController: rootView)
-//        
         
         var sideMenu = SSASideMenu(contentViewController: noteInputView, leftMenuViewController: leftMenu!)
         sideMenu.backgroundImage = UIImage(named: "Background.jpg")
         sideMenu.menuPreferredStatusBarStyle = .LightContent
         sideMenu.panDirection = SSASideMenu.SSASideMenuPanDirection.EveryWhere
         sideMenu.delegate = self
-//        
-//        sideMenu.leftMenuViewController = LeftMenuViewController()
-//        
-//        
+        
         window?.rootViewController = sideMenu
         window?.makeKeyAndVisible()
 

@@ -8,17 +8,28 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class NotesInputViewController: UIViewController {
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         view.backgroundColor = UIColor.whiteColor()
       
         title = "Note Entry"
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Left", style: .Plain, target: self, action: "presentLeftMenuViewController")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "saveNote")
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right", style: .Plain, target: self, action: "presentRightMenuViewController")
         
+    }
+    
+    func saveNote ()
+    {
+        println("yup")
+        let db = DBController()
+        db.insertNote(["notes":"testing"])
+        db.sync()
+
     }
     
 
