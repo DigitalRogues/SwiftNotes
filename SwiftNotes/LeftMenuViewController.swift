@@ -13,7 +13,7 @@ import UIKit
 //         let view = appDelegate.rootView
 class LeftMenuViewController: UIViewController {
     
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -91,14 +91,14 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         case 0:
             
             //Notes
-            let sb:UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-            let view = sb.instantiateViewControllerWithIdentifier("noteListView") as! UIViewController
+            let view = appDelegate.sb.instantiateViewControllerWithIdentifier("noteListView") as! UIViewController
            sideMenuViewController?.contentViewController = view
                 sideMenuViewController?.hideMenuViewController()
             break
         case 1:
             
-            let view = appDelegate.rootView as UIViewController
+            //note input view
+            let view = appDelegate.noteInputView as UIViewController
             sideMenuViewController?.contentViewController = view
             sideMenuViewController?.hideMenuViewController()
             break

@@ -13,9 +13,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
 
         
-    var rootView:UIViewController = UIViewController()
+    var noteInputView:UIViewController = UIViewController()
     var window: UIWindow?
-    let sb:UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    var sb:UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -46,15 +46,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
         //MARK : Setup SSASideMenu
         
         
-         rootView = sb.instantiateViewControllerWithIdentifier("contentViewController") as! UIViewController
+         noteInputView = sb.instantiateViewControllerWithIdentifier("contentViewController") as! UIViewController
         let leftMenu = sb.instantiateViewControllerWithIdentifier("leftMenu") as? UIViewController
 
 //        let navi = UINavigationController(rootViewController: rootView)
 //        
         
-        let sideMenu = SSASideMenu(contentViewController: rootView, leftMenuViewController: leftMenu!)
+        var sideMenu = SSASideMenu(contentViewController: noteInputView, leftMenuViewController: leftMenu!)
         sideMenu.backgroundImage = UIImage(named: "Background.jpg")
         sideMenu.menuPreferredStatusBarStyle = .LightContent
+        sideMenu.panDirection = SSASideMenu.SSASideMenuPanDirection.EveryWhere
         sideMenu.delegate = self
 //        
 //        sideMenu.leftMenuViewController = LeftMenuViewController()
