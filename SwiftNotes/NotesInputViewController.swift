@@ -26,8 +26,8 @@ class NotesInputViewController: UIViewController {
     func saveNote ()
     {
         println("yup")
-        let db = DBController()
-        db.insertNote(["notes":"testing"])
+        let db = DBController.sharedInstance
+        db.insertNote(["note":"testing"])
         db.sync()
 
     }

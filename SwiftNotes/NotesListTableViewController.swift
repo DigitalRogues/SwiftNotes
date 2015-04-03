@@ -10,17 +10,23 @@ import UIKit
 
 
 class NotesListTableViewController: UITableViewController {
-
+    
+    var mainArray:Array<AnyObject> = Array()
    
-
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(false)
+        
+        let db = DBController.sharedInstance
+        mainArray = db.getNotes()
+        
+            self.tableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    
 
-        
-        //println(results)
-        //NSArray *results = [tasksTbl query:nil error:nil];
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -38,24 +44,25 @@ class NotesListTableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return mainArray.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+        let record = mainArray[indexPath.row] as! DBRecord
+        cell.textLabel!.text = record["note"] as? String
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
