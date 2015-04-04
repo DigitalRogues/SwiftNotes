@@ -11,6 +11,8 @@ import UIKit
 class NotesInputViewController: UIViewController {
     
     
+    @IBOutlet var noteTitle: UITextField!
+    @IBOutlet var notesInputTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +23,30 @@ class NotesInputViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: "saveNote")
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Right", style: .Plain, target: self, action: "presentRightMenuViewController")
         
+        //set up textkit?
+        notesInputTextView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        
     }
     
     func saveNote ()
     {
         println("yup")
         let db = DBController.sharedInstance
-        db.insertNote(["note":"testing"])
+        
+        //save date as a local date
+
+        let localDate = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.MediumStyle, timeStyle: NSDateFormatterStyle.MediumStyle)
+        
+        var title = ""
+        if(count(noteTitle.text) == 0)
+        {
+            title = localDate
+        }
+        
+        else {
+            title = noteTitle.text
+        }
+        db.insertNote(["title":title,"note":notesInputTextView.text,"date":localDate])
         db.sync()
 
     }

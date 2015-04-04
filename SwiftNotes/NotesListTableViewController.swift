@@ -19,6 +19,10 @@ class NotesListTableViewController: UITableViewController {
         let db = DBController.sharedInstance
         mainArray = db.getNotes()
         
+        //sort array by date
+        let sorter = [NSSortDescriptor(key: "date", ascending:true)]
+
+        
             self.tableView.reloadData()
     }
     
@@ -57,7 +61,8 @@ class NotesListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
         let record = mainArray[indexPath.row] as! DBRecord
-        cell.textLabel!.text = record["note"] as? String
+        cell.textLabel!.text = record["title"] as? String
+        cell.detailTextLabel!.text = record["date"] as? String
         // Configure the cell...
 
         return cell

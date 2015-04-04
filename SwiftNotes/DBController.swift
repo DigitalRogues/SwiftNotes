@@ -42,7 +42,7 @@ class DBController: NSObject {
 
     }
     
-    func insertNote(dic:Dictionary<String,String>)
+    func insertNote(dic:Dictionary<String,AnyObject>)
     {
         notesTable.insert(dic)
     }
