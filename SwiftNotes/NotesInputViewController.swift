@@ -13,6 +13,7 @@ class NotesInputViewController: UIViewController {
     
     @IBOutlet var noteTitle: UITextField!
     @IBOutlet var notesInputTextView: UITextView!
+    var recordId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,14 @@ class NotesInputViewController: UIViewController {
         //set up textkit?
         notesInputTextView.font = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
         
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        if(recordId != "")
+        {
+            
+        }
     }
     
     func saveNote ()

@@ -11,17 +11,23 @@ import UIKit
 
 class NotesListTableViewController: UITableViewController {
     
-    var mainArray:Array<AnyObject> = Array()
+    var mainArray:[AnyObject] = Array()
    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(false)
         
         let db = DBController.sharedInstance
-        mainArray = db.getNotes()
+        mainArray = db.getNotes() 
         
-        //sort array by date
-        let sorter = [NSSortDescriptor(key: "date", ascending:true)]
-
+        //sort array by date, this is ugly and there's gotta be a better way
+        mainArray.sort { (this:AnyObject, that:AnyObject) -> Bool in
+            let date1:Dictionary = this.fields //fields is property on DBRecord
+            let date2:Dictionary = that.fields
+            
+            let check1 = date1["date"] as! String
+            let check2 = date2["date"] as! String
+            return check1 > check2
+        }
         
             self.tableView.reloadData()
     }
@@ -104,14 +110,21 @@ class NotesListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        println(sender)
+        
+        let index = tableView.indexPathForSelectedRow()?.row
+        
+        let stuff = mainArray[index!] as! DBRecord
+            
+        
     }
-    */
+    
 
 }

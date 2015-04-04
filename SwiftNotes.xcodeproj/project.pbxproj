@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC0ABFFC1AD059C100034627 /* NoteObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0ABFFB1AD059C100034627 /* NoteObject.swift */; };
 		BC0EB6481ACA30530031E0DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0EB6471ACA30530031E0DB /* AppDelegate.swift */; };
 		BC0EB64D1ACA30530031E0DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0EB64B1ACA30530031E0DB /* Main.storyboard */; };
 		BC0EB64F1ACA30530031E0DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0EB64E1ACA30530031E0DB /* Images.xcassets */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC0ABFFB1AD059C100034627 /* NoteObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteObject.swift; sourceTree = "<group>"; };
 		BC0EB6421ACA30530031E0DB /* SwiftNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0EB6461ACA30530031E0DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0EB6471ACA30530031E0DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				BC6325431ACA576600C63E8D /* LeftMenuViewController.swift */,
 				BC6325481ACA591900C63E8D /* NotesInputViewController.swift */,
 				BCC8142C1ACCEA2200859CEF /* NotesListTableViewController.swift */,
+				BC0ABFFB1AD059C100034627 /* NoteObject.swift */,
 				BCC8142E1ACCFEC300859CEF /* DBController.swift */,
 				BC0EB64B1ACA30530031E0DB /* Main.storyboard */,
 				BC0EB64E1ACA30530031E0DB /* Images.xcassets */,
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0ABFFC1AD059C100034627 /* NoteObject.swift in Sources */,
 				BC6325421ACA526600C63E8D /* SSASideMenu.swift in Sources */,
 				BC6325451ACA576600C63E8D /* LeftMenuViewController.swift in Sources */,
 				BC63254A1ACA591900C63E8D /* NotesInputViewController.swift in Sources */,

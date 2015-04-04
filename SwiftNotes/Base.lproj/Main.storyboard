@@ -88,6 +88,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.7485540509223938" green="0.76028704643249512" blue="0.65831905603408813" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="xJA-14-LWz" kind="show" identifier="noteLoading" id="Cit-kN-f4h"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -155,5 +158,8 @@
             <point key="canvasLocation" x="1103" y="347"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Cit-kN-f4h"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.84893578290939331" green="0.86640185117721558" blue="0.64782655239105225" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
