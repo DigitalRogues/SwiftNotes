@@ -1,0 +1,10 @@
+PODS:
+  - FRDLivelyButton (1.1.3)
+
+DEPENDENCIES:
+  - FRDLivelyButton (~> 1.1.3)
+
+SPEC CHECKSUMS:
+  FRDLivelyButton: d67f7ecb801ac84427fca1ea832a63e972b72478
+
+COCOAPODS: 0.36.1

@@ -35,9 +35,15 @@ class DBController: NSObject {
         dataStore.close()
     }
     
-    func getNotes () -> Array<AnyObject>
+    func getNotes () -> Array<NoteObject>
     {
-        let results = notesTable.query(nil, error: nil)
+        let query = notesTable.query(nil, error: nil)
+        
+        var results:Array<NoteObject> = Array()
+        for element  in query {
+           results.append( dbToNote(element as! DBRecord))
+        }
+        
         return results
 
     }
@@ -45,6 +51,28 @@ class DBController: NSObject {
     func insertNote(dic:Dictionary<String,AnyObject>)
     {
         notesTable.insert(dic)
+    }
+    
+    
+    /////I could probably use DBrecords directly in my view controllers, but I feel its a bit cleaner to use an object with properties instead of dictionaries and subscripts with text. Also leaves it a bit more flexible if i choose to implement a different\ backend
+//    func noteToDB(NoteObject) -> DBRecord
+//    {
+//        
+//       
+//    }
+    
+    
+    func dbToNote(record:DBRecord) -> NoteObject
+    {
+        
+        let noteObj = NoteObject()
+        
+        noteObj.title = record["title"] as! String
+        noteObj.note = record["note"] as! String
+        noteObj.date = record["date"] as! String
+        
+        
+        return noteObj
     }
     
     func sync()

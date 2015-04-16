@@ -16,18 +16,20 @@ class NotesListTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(false)
         
+        title = "Notes"
+        
         let db = DBController.sharedInstance
         mainArray = db.getNotes() 
         
-        //sort array by date, this is ugly and there's gotta be a better way
-        mainArray.sort { (this:AnyObject, that:AnyObject) -> Bool in
-            let date1:Dictionary = this.fields //fields is property on DBRecord
-            let date2:Dictionary = that.fields
-            
-            let check1 = date1["date"] as! String
-            let check2 = date2["date"] as! String
-            return check1 > check2
-        }
+//        //sort array by date, this is ugly and there's gotta be a better way
+//        mainArray.sort { (this:AnyObject, that:AnyObject) -> Bool in
+//            let date1:Dictionary = this.fields //fields is property on DBRecord
+//            let date2:Dictionary = that.fields
+//            
+//            let check1 = date1["date"] as! String
+//            let check2 = date2["date"] as! String
+//            return check1 > check2
+//        }
         
             self.tableView.reloadData()
     }
@@ -66,9 +68,9 @@ class NotesListTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
-        let record = mainArray[indexPath.row] as! DBRecord
-        cell.textLabel!.text = record["title"] as? String
-        cell.detailTextLabel!.text = record["date"] as? String
+        let record = mainArray[indexPath.row] as! NoteObject
+        cell.textLabel!.text = record.title
+        cell.detailTextLabel!.text = record.date
         // Configure the cell...
 
         return cell
@@ -119,10 +121,13 @@ class NotesListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         println(sender)
         
+        
+        let vc = segue.destinationViewController as! NotesInputViewController
+        
         let index = tableView.indexPathForSelectedRow()?.row
         
-        let stuff = mainArray[index!] as! DBRecord
-            
+        vc.noteObject = mainArray[index!] as! NoteObject
+        
         
     }
     

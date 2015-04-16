@@ -39,6 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
 
         }
         
+        let token = NSProcessInfo.processInfo().environment["DBKEY"] as! String
+    
+        println(token)
         
         
         

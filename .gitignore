@@ -27,3 +27,4 @@ Pods
 .idea/
 *.iml
 SSASideMenu
+xcshareddata
