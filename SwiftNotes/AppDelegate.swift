@@ -20,8 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        //init account manager
-        let accountManager = DBAccountManager(appKey: "p4otevrsn0z991s", secret: "ld7wucz9j9o44al")
+        //get the DB keys from the scheme envrionmental variables
+        let dbKey = NSProcessInfo.processInfo().environment["DBKEY"] as! String
+        let dbSecret = NSProcessInfo.processInfo().environment["DBSECRET"] as! String
+
+        
+        
+        //init account manager //use your own Dropbox keys
+        let accountManager = DBAccountManager(appKey: dbKey, secret: dbSecret)
         DBAccountManager.setSharedManager(accountManager)
         
         //set up datastores
@@ -39,9 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SSASideMenuDelegate {
 
         }
         
-        let token = NSProcessInfo.processInfo().environment["DBKEY"] as! String
-    
-        println(token)
+        
         
         
         
