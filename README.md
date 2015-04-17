@@ -1,5 +1,5 @@
 #SwiftNotes#
-a collab from [DigitalRogues](https://bitbucket.org/digitalrogues "DigitalRogues") & [DigitalKNK](https://bitbucket.org/digitalknk "DigitalKNK")
+a work in major progress collab from [DigitalRogues](https://github.com/digitalrogues "DigitalRogues") & [DigitalKNK](https://github.com/digitalknk "DigitalKNK")
 
 
 ### A fast secure note app ###
